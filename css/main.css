@@ -1,0 +1,82 @@
+/*本文*/
+
+main {
+    margin-top: 90px;
+    background-color: var(--backgroundcolor);
+}
+
+.main-contents {
+    max-width: var(--myw);
+    margin: 0 auto;
+    padding: 100px 190px 120px 190px;
+}
+
+.title {
+    margin-bottom: 60px;
+    position: relative;
+    height: 81px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.05em;
+}
+
+.title::before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    height: 0.6px;
+    width: 100vw;
+    left: calc((100% - 100vw) / 2);
+    bottom: 0;
+    background-color: #E5DFD7;
+}
+
+.title::after {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--basecolor);
+}
+
+.body {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.05em;
+}
+
+.body span {
+    font-weight: bold;
+}
+
+@media (max-width: 767px) {
+    main{
+        margin-top: 0;
+    }
+    .main-contents {
+        max-width: var(--myw);
+        margin: 0 auto;
+        padding: 120px 20px 120px 20px;
+    }
+    .title {
+        margin-bottom: 40px;
+        height: 46px;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 35px;
+    }
+    .body {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: 0.05em;
+    }
+    .body span {
+        font-weight: bold;
+    }
+}

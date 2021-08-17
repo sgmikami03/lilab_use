@@ -1,0 +1,229 @@
+/*変数*/
+
+:root {
+    --basecolor: #41A9A5;
+    --basebgcolor: rgba(232, 244, 246, 1);
+    /* 基本背景色 */
+    --textcolor: #384352;
+    --textcolor-light: #666666;
+    /* 基本文字色 */
+    --backgroundcolor: #FAF7F3;
+    --backgroundaccentcolor: rgba(255, 232, 232, 1);
+    --btnbg: linear-gradient(260.44deg, #FBFF2E -9.45%, rgba(255, 198, 50, 0) 59.99%), #FA9218;
+    --myfont: 'Noto Sans JP', sans-serif;
+    --accent-font: 'Noto Sans JP', sans-serif;
+    --myw: 1280px;
+    /* 標準幅 */
+    --content-padding-side: 16px;
+}
+
+/*定義*/
+
+* {
+    font-family: var(--myfont);
+}
+
+html {
+    overflow: auto;
+}
+
+body {
+    overflow: hidden;
+}
+
+.mycontents-wide {
+    max-width: var(--myw);
+    padding: 0 65px;
+    margin: 0 auto;
+}
+
+.mycontents {
+    max-width: var(--myw);
+    padding: 0 100px;
+    margin: 0 auto;
+}
+
+.aligin-wide {
+    width: 100vw;
+    text-align: center;
+    margin: 0 calc(50% - 50vw);
+}
+
+h1, h2, h3, h4, h5, h6, li, p {
+    color: var(--textcolor);
+    line-height: 155%;
+}
+
+hr {
+    color: var(--textcolor);
+}
+
+@media (max-width: 767px) {
+    .mycontents-wide, .mycontents {
+        padding: 0 20px;
+    }
+}
+
+/*改行*/
+
+.br-sp {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .br-pc {
+        display: none;
+    }
+    .br-sp {
+        display: block;
+    }
+}
+
+/*見出し*/
+
+.sec-title {
+    position: relative;
+    font-size: 30px;
+    line-height: 62px;
+    height: 77px;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.sec-title::before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: calc(100% + (100vw - 100%)/2);
+    height: 1px;
+    bottom: 0;
+    left: calc((100% - 100vw)/2);
+    background-color: #E5DFD7;
+}
+
+.sec-title::after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 100px;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--basecolor);
+}
+
+.sec-title__accent {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 20px;
+    font-size: 48px;
+    font-family: var(--accent-font);
+    line-height: 62px;
+    letter-spacing: 0.05em;
+    color: var(--basecolor);
+}
+
+.sec-title__accent_black {
+    color: var(--textcolor);
+    margin-right: 0;
+    line-height: 62px;
+    vertical-align: middle;
+}
+
+.sec-title__subtitle {
+    margin-left: 20px;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 62px;
+    letter-spacing: 0.05em;
+    color: var(--basecolor);
+}
+
+@media (max-width: 767px) {
+    .sec-title {
+        height: 52px;
+        line-height: normal;
+    }
+    .sec-title::after {
+        width: 60px;
+    }
+    .sec-title__accent {
+        font-size: 32px;
+        line-height: 52px;
+    }
+    .sec-title__subtitle {
+        font-size: 12px;
+        line-height: 19px;
+    }
+}
+
+/*btn*/
+
+.wide-btn {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    height: 70px;
+    border-radius: 35px;
+    text-align: center;
+    line-height: 70px;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    background: var(--btnbg);
+    z-index: 5;
+}
+
+.wide-btn span {
+    font-family: var(--accent-font);
+}
+
+/*info*/
+
+.info {
+    padding: 113px 0;
+    background-image: url(../img/sample/info-bg.jpg);
+    background-size: cover;
+    text-align: center;
+}
+
+.info__text {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: var(--textcolor);
+    margin-bottom: 61px;
+}
+
+.info__btn__base {
+    margin-right: 70px;
+    display: inline-block;
+    width: 240px;
+    height: 62px;
+    border-radius: 31px;
+    background-color: var(--basecolor);
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 62px;
+    letter-spacing: 0.05em;
+}
+
+.info__btn__white {
+    display: inline-block;
+    width: 240px;
+    height: 62px;
+    border-radius: 31px;
+    background-color: #fff;
+    color: var(--basecolor);
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 60px;
+    letter-spacing: 0.05em;
+    border: 3px solid var(--basecolor);
+}
